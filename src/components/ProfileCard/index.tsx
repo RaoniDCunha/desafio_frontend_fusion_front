@@ -1,10 +1,14 @@
+"use client";
+
 import React, { ReactNode } from 'react';
 import { ProfileCardButton } from '../ProfileCardButton';
-import { Check, Mail } from 'lucide-react';
+import { Check, Mail,Users } from 'lucide-react';
 import { CardNumbersInformation } from '../CardNumbersInformation';
 import Image from "next/image";
+import { useState } from "react";
 
-// Interface definindo tudo o que o componente pode receber
+
+
 interface ProfileCardProps {
  
 }
@@ -12,6 +16,14 @@ interface ProfileCardProps {
 export function ProfileCard({ 
   
 }: ProfileCardProps) {
+    
+    const [isFollowing, setIsFollowing] = useState(false);
+
+       
+    const handleToggleFollow = () => {
+        setIsFollowing(!isFollowing); 
+    };
+
   return (
            <div className="w-[400px] h-[535.78px] rounded-[24px] bg-white shadow-lg flex flex-col">
            
@@ -54,7 +66,13 @@ export function ProfileCard({
 
                 {/* 5. Row de 2 Botões */}
                 <div className="flex justify-between w-[352px] h-[48px] mb-[24px]">
-                  <ProfileCardButton texto={"Seguindo"} icone={<Check size={20} color="#FFFFFF" />} corFundo={"#10B981"} corTexto={"#FFFFFF"} />
+
+                {isFollowing ? (
+                    <ProfileCardButton texto={"Seguir"} icone={<Users size={20} color="#FFFFFF" />} corFundo={"#6975DD"} corTexto={"#FFFFFF"}  onClick={handleToggleFollow}/>
+                ) : (
+                    <ProfileCardButton texto={"Seguindo"} icone={<Check size={20} color="#FFFFFF" />} corFundo={"#10B981"} corTexto={"#FFFFFF"} onClick={handleToggleFollow} />
+                )}
+                  
                   <ProfileCardButton texto={"Mensagem"} icone={<Mail size={20} color="#374151" />} corFundo={"#E5E7EB"} corTexto={"#374151"} />
                 </div>
 
