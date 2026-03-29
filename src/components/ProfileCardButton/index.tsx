@@ -6,6 +6,7 @@ interface ProfileCardButtonProps {
   icone: ReactNode; // ReactNode permite passar qualquer SVG ou componente de ícone
   corFundo: string;
   corTexto: string;
+  sombra: boolean; 
   corBorda?: string; // Opcional
   onClick?: () => void; // Ação ao clicar na div
 }
@@ -15,6 +16,7 @@ export function ProfileCardButton({
   icone, 
   corFundo, 
   corTexto, 
+  sombra,
   corBorda = 'transparent', // Se não passar borda, fica transparente por padrão
   onClick 
 }: ProfileCardButtonProps) {
@@ -24,7 +26,8 @@ export function ProfileCardButton({
       style={{ 
         backgroundColor: corFundo, 
         color: corTexto,
-        borderColor: corBorda 
+        borderColor: corBorda,
+        boxShadow: sombra ? '0px 2px 4px #10B9814D' : undefined
       }}
       // Usei h-[48px] para garantir a altura exata, gap-[8px] para dar um respiro entre ícone e texto, e hover:opacity-80 para o efeito de transição
       className="w-[155px] h-[48px] border rounded-[12px] flex flex-row items-center justify-center gap-[8px] cursor-pointer hover:opacity-80 transition-opacity shrink-0"

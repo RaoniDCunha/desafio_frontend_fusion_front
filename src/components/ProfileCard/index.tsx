@@ -6,6 +6,7 @@ import { Check, Mail,Users } from 'lucide-react';
 import { CardNumbersInformation } from '../CardNumbersInformation';
 import Image from "next/image";
 import { useState } from "react";
+import { ProfileCardButtonGradient } from '../ProfileCardButtonGradient';
 
 
 
@@ -68,12 +69,13 @@ export function ProfileCard({
                 <div className="flex justify-between w-[352px] h-[48px] mb-[24px]">
 
                 {isFollowing ? (
-                    <ProfileCardButton texto={"Seguir"} icone={<Users size={20} color="#FFFFFF" />} corFundo={"#6975DD"} corTexto={"#FFFFFF"}  onClick={handleToggleFollow}/>
+                    
+                    <ProfileCardButtonGradient texto={"Seguir"} icone={<Users size={20} color="#FFFFFF" />} corGradienteInicial='#6975DD' corGradienteFinal='#7354AE' corTexto={"#FFFFFF"}  onClick={handleToggleFollow} />
                 ) : (
-                    <ProfileCardButton texto={"Seguindo"} icone={<Check size={20} color="#FFFFFF" />} corFundo={"#10B981"} corTexto={"#FFFFFF"} onClick={handleToggleFollow} />
+                    <ProfileCardButton texto={"Seguindo"} icone={<Check size={20} color="#FFFFFF" />} corFundo={"#10B981"} corTexto={"#FFFFFF"} onClick={handleToggleFollow} sombra={true} />
                 )}
                   
-                  <ProfileCardButton texto={"Mensagem"} icone={<Mail size={20} color="#374151" />} corFundo={"#E5E7EB"} corTexto={"#374151"} />
+                  <ProfileCardButton texto={"Mensagem"} icone={<Mail size={20} color="#374151" />} corFundo={"#E5E7EB"} corTexto={"#374151"} corBorda='#E5E7EB' sombra={false} />
                 </div>
 
                 {/* 6. Texto de Bio */}
