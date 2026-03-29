@@ -12,8 +12,45 @@ export default function Home() {
 
 
           {/* Div Inferior (Conteúdo principal) */}
-          <div className="flex-1 p-6 bg-white">
-            {/* Conteúdo do cartão  */}
+          <div className="flex-1 flex flex-col items-center p-6 bg-white">
+
+                {/* 1. Avatar Redondo com Margem Negativa para sobrepor o topo */}
+                <div className="w-[136px] h-[136px] rounded-full border-[4px] border-[#A241C2] -mt-[68px] mb-[4px] bg-white overflow-hidden shrink-0">
+                  {/* Imagem do perfil vai aqui */}
+                </div>
+
+                {/* 2. Nome */}
+                <div className="text-[#1A1A1A] font-['Inter'] font-bold text-[22.1px] leading-[39px] text-center mb-[6px]">
+                  Ana Silva
+                </div>
+
+                {/* 3. Cargo */}
+                <div className="text-[#6B7280] font-['Inter'] font-medium text-[12.75px] leading-[22px] text-center mb-[24px]">
+                  Desenvolvedora Full Stack
+                </div>
+
+                {/* 4. Row de 3 caixas (Stats/Social) */}
+                <div className="flex justify-between w-[233.95px] h-[51.5px] mb-[32px]">
+                  <div className="w-[48.36px] h-full bg-gray-100 rounded-lg"></div>
+                  <div className="w-[48.36px] h-full bg-gray-100 rounded-lg"></div>
+                  <div className="w-[48.36px] h-full bg-gray-100 rounded-lg"></div>
+                </div>
+
+                {/* 5. Row de 2 Botões */}
+                <div className="flex justify-between w-[352px] h-[48px] mb-[24px]">
+                  <button className="w-[155px] h-full bg-[#F3F4F6] border border-[#E5E7EB] rounded-[12px] flex items-center justify-center font-['Inter'] font-medium text-sm text-gray-700 hover:bg-gray-200 transition-colors">
+                    Botão 1
+                  </button>
+                  <button className="w-[155px] h-full bg-[#F3F4F6] border border-[#E5E7EB] rounded-[12px] flex items-center justify-center font-['Inter'] font-medium text-sm text-gray-700 hover:bg-gray-200 transition-colors">
+                    Botão 2
+                  </button>
+                </div>
+
+                {/* 6. Texto de Bio */}
+                <div className="w-[320px] text-[#6B7280] font-['Inter'] font-normal text-[11.9px] leading-[22px] text-center">
+                  Apaixonada por criar experiências digitais incríveis.<br/>
+                  Especialista em React e Node.js.
+                </div>
           </div>
 
         </div>
