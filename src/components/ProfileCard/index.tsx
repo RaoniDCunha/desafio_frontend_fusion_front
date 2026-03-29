@@ -7,6 +7,7 @@ import { CardNumbersInformation } from '../CardNumbersInformation';
 import Image from "next/image";
 import { useState } from "react";
 import { ProfileCardButtonGradient } from '../ProfileCardButtonGradient';
+import { motion, AnimatePresence } from "framer-motion";
 
 
 
@@ -24,6 +25,12 @@ export function ProfileCard({
     const handleToggleFollow = () => {
         setIsFollowing(!isFollowing); 
     };
+
+    const animationVariants = {
+    initial: { opacity: 0, scale: 0.8 }, 
+    animate: { opacity: 1, scale: 1 },    
+    exit: { opacity: 0, scale: 0.8 },      
+  };
 
   return (
            <div className="w-[400px] h-[535.78px] rounded-[24px] bg-white shadow-lg flex flex-col">
@@ -66,16 +73,50 @@ export function ProfileCard({
                 </div>
 
                 {/* 5. Row de 2 Botões */}
-                <div className="flex justify-between w-[352px] h-[48px] mb-[24px]">
+                <div className="flex justify-center gap-4 w-[352px] h-[48px] mb-[24px]">
+                    <AnimatePresence mode="wait">
+                        {isFollowing ? (
+                        <motion.div
+                            key="button-gradient" 
+                            variants={animationVariants}
+                            initial="initial"
+                            animate="animate"
+                            exit="exit"
+                            transition={{ duration: 0.08, ease: "backOut" }} 
+                            className="w-[155px]" 
+                        >
+                            <ProfileCardButtonGradient 
+                            texto={"Seguir"} 
+                            icone={<Users size={20} color="#FFFFFF" />} 
+                            corGradienteInicial='#6975DD' 
+                            corGradienteFinal='#7354AE' 
+                            corTexto={"#FFFFFF"} 
+                            onClick={handleToggleFollow} 
+                            />
+                        </motion.div>
+                        ) : (
+                        <motion.div
+                            key="button-solid" 
+                            variants={animationVariants}
+                            initial="initial"
+                            animate="animate"
+                            exit="exit"
+                            transition={{ duration: 0.3, ease: "backOut" }}
+                            className="w-[155px]"
+                        >
+                            <ProfileCardButton 
+                            texto={"Seguindo"} 
+                            icone={<Check size={20} color="#FFFFFF" />} 
+                            corFundo={"#10B981"} 
+                            corTexto={"#FFFFFF"} 
+                            onClick={handleToggleFollow} 
+                            sombra={true} 
+                            />
+                        </motion.div>
+                        )}
+                    </AnimatePresence>
 
-                {isFollowing ? (
-                    
-                    <ProfileCardButtonGradient texto={"Seguir"} icone={<Users size={20} color="#FFFFFF" />} corGradienteInicial='#6975DD' corGradienteFinal='#7354AE' corTexto={"#FFFFFF"}  onClick={handleToggleFollow} />
-                ) : (
-                    <ProfileCardButton texto={"Seguindo"} icone={<Check size={20} color="#FFFFFF" />} corFundo={"#10B981"} corTexto={"#FFFFFF"} onClick={handleToggleFollow} sombra={true} />
-                )}
-                  
-                  <ProfileCardButton texto={"Mensagem"} icone={<Mail size={20} color="#374151" />} corFundo={"#E5E7EB"} corTexto={"#374151"} corBorda='#E5E7EB' sombra={false} />
+                    <ProfileCardButton texto={"Mensagem"} icone={<Mail size={20} color="#374151" />} corFundo={"#E5E7EB"} corTexto={"#374151"} corBorda='#E5E7EB' sombra={false} />
                 </div>
 
                 {/* 6. Texto de Bio */}
