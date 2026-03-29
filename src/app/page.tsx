@@ -1,5 +1,7 @@
 import { CardNumbersInformation } from "@/components/CardNumbersInformation";
+import { ProfileCardButton } from "@/components/ProfileCardButton";
 import Image from "next/image";
+import { Check, Mail } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -16,8 +18,14 @@ export default function Home() {
           <div className="flex-1 flex flex-col items-center p-6 bg-white rounded-b-[24px]">
 
                 {/* 1. Avatar Redondo com Margem Negativa para sobrepor o topo */}
-                <div className="w-[136px] h-[136px] rounded-full border-[4px] border-[#A241C2] -mt-[68px] mb-[4px] bg-white overflow-hidden shrink-0">
-                  {/* Imagem do perfil vai aqui */}
+                <div className="relative w-[136px] h-[136px] rounded-full ring-[4px] ring-[#A241C2] -mt-[100px] mb-[4px] bg-white overflow-hidden shrink-0">
+                  <Image
+                    src="/images/user.png" 
+                    alt="Foto de perfil de Ana Silva" 
+                    fill 
+                    className="object-cover rounded-full ring-[4px] ring-white" 
+                    priority 
+                  />
                 </div>
 
                 {/* 2. Nome */}
@@ -39,12 +47,8 @@ export default function Home() {
 
                 {/* 5. Row de 2 Botões */}
                 <div className="flex justify-between w-[352px] h-[48px] mb-[24px]">
-                  <button className="w-[155px] h-full bg-[#F3F4F6] border border-[#E5E7EB] rounded-[12px] flex items-center justify-center font-['Inter'] font-medium text-sm text-gray-700 hover:bg-gray-200 transition-colors">
-                    Botão 1
-                  </button>
-                  <button className="w-[155px] h-full bg-[#F3F4F6] border border-[#E5E7EB] rounded-[12px] flex items-center justify-center font-['Inter'] font-medium text-sm text-gray-700 hover:bg-gray-200 transition-colors">
-                    Botão 2
-                  </button>
+                  <ProfileCardButton texto={"Seguindo"} icone={<Check size={20} color="#FFFFFF" />} corFundo={"#10B981"} corTexto={"#FFFFFF"} />
+                  <ProfileCardButton texto={"Mensagem"} icone={<Mail size={20} color="#374151" />} corFundo={"#E5E7EB"} corTexto={"#374151"} />
                 </div>
 
                 {/* 6. Texto de Bio */}
