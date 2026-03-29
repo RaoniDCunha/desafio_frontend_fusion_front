@@ -1,3 +1,4 @@
+import { CardNumbersInformation } from "@/components/CardNumbersInformation";
 import Image from "next/image";
 
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
 
 
           {/* Div Inferior (Conteúdo principal) */}
-          <div className="flex-1 flex flex-col items-center p-6 bg-white">
+          <div className="flex-1 flex flex-col items-center p-6 bg-white rounded-b-[24px]">
 
                 {/* 1. Avatar Redondo com Margem Negativa para sobrepor o topo */}
                 <div className="w-[136px] h-[136px] rounded-full border-[4px] border-[#A241C2] -mt-[68px] mb-[4px] bg-white overflow-hidden shrink-0">
@@ -31,9 +32,9 @@ export default function Home() {
 
                 {/* 4. Row de 3 caixas (Stats/Social) */}
                 <div className="flex justify-between w-[233.95px] h-[51.5px] mb-[32px]">
-                  <div className="w-[48.36px] h-full bg-gray-100 rounded-lg"></div>
-                  <div className="w-[48.36px] h-full bg-gray-100 rounded-lg"></div>
-                  <div className="w-[48.36px] h-full bg-gray-100 rounded-lg"></div>
+                  <CardNumbersInformation valor={"981"} rotulo={"Seguidores"}  />
+                  <CardNumbersInformation valor={"180"} rotulo={"Seguindo"}  />
+                  <CardNumbersInformation valor={"42"} rotulo={"Projetos"}  />
                 </div>
 
                 {/* 5. Row de 2 Botões */}
