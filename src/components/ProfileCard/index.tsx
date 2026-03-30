@@ -58,7 +58,7 @@ export function ProfileCard({
   };
 
   return (
-           <div className="w-[400px] h-[535.78px] rounded-[24px] bg-white shadow-lg flex flex-col">
+           <div className="w-full max-w-[400px] mx-4 h-[535.78px] rounded-[24px] bg-white shadow-lg flex flex-col">
            
            {/* Div Superior (Cabeçalho/Topo) */}
           <div className="w-full h-[140px] bg-gray-200 rounded-t-[24px] shrink-0">
