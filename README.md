@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎯 Desafio Frontend Junior - Card de Perfil
 
-## Getting Started
+Este projeto foi desenvolvido como parte do desafio técnico para a **Frontend Fusion**. O objetivo foi construir um componente de Card de Perfil interativo, responsivo e acessível, seguindo fielmente o design proposto no Figma.
 
-First, run the development server:
+## 🚀 Funcionalidades Implementadas
+
+Além dos requisitos obrigatórios, foram adicionados diversos diferenciais para enriquecer a experiência do usuário:
+
+* **Componente Dinâmico:** `ProfileCard` construído para receber dados via *props* (nome, cargo, números, bio e foto).
+* **Interatividade Avançada:** Botão "Seguir" com mudança de estado, texto e estilo visual.
+* **Persistência de Dados:** O estado do botão "Seguir" é salvo no `localStorage`, mantendo a escolha do usuário mesmo após recarregar a página.
+* **Animações Suaves (Diferencial):** Transições de interface utilizando **Framer Motion** para evitar cortes bruscos na troca de botões, além de um Modal interativo para o botão "Mensagem".
+* **Responsividade:** Layout adaptável para dispositivos móveis e desktop.
+
+## 🛠️ Tecnologias Utilizadas
+
+* **[Next.js 14+](https://nextjs.org/)** - Framework React com App Router.
+* **[React](https://react.dev/)** - Biblioteca de interfaces (uso de Hooks como `useState` e `useEffect`).
+* **[Tailwind CSS](https://tailwindcss.com/)** - Estilização utilitária e responsiva.
+* **[Framer Motion](https://www.framer.com/motion/)** - Biblioteca para animações fluidas e micro-interações.
+* **[Lucide React](https://lucide.dev/)** - Ícones SVG leves e customizáveis.
+
+---
+
+## 💻 Como rodar o projeto localmente
+
+Siga os passos abaixo para testar o projeto na sua máquina:
+
+1. Clone este repositório:
+```bash
+git clone https://github.com/RaoniDCunha/desafio_frontend_fusion_front.git
+
+```
+
+2. Acesse a pasta do projeto:
+```bash
+cd desafio_frontend_fusion_front
+
+```
+
+3. Instale as dependências:
+```bash
+npm install
+# ou
+yarn install
+# ou
+pnpm install
+```
+
+4. Inicie o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
+# ou
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Acesse no navegador:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Abra o seu navegador e acesse http://localhost:3000 para ver o resultado. O layout será atualizado automaticamente caso você faça alterações no código.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
